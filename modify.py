@@ -1,14 +1,13 @@
 import json
 import os
 import math
-import re
 
 STATE_FILE = "state.json"
 README_FILE = "README.md"
 
 def load_state():
     if not os.path.exists(STATE_FILE):
-        # Simpler Tetrahedron Shape
+        # Default starting shape (Tetrahedron)
         return {
             "top":   [0.0,   0.0,  10.0],
             "front": [10.0, -6.0, -5.0],
@@ -39,52 +38,64 @@ def parse_issue_body():
                 
     return vertex_name, axis_name, amount
 
-def generate_stl_string(state):
-    # Unpack vertices
+def generate_stl_content(state):
     t = state["top"]
     f_pt = state["front"]
     l = state["left"]
     r = state["right"]
 
-    stl_content = ["solid simple_tetrahedron"]
+    lines = ["solid generated_shape"]
 
     def add_facet(v1, v2, v3):
         ux, uy, uz = v2[0]-v1[0], v2[1]-v1[1], v2[2]-v1[2]
         vx, vy, vz = v3[0]-v1[0], v3[1]-v1[1], v3[2]-v1[2]
         nx, ny, nz = uy*vz - uz*vy, uz*vx - ux*vz, ux*vy - uy*vx
-        
         length = math.sqrt(nx*nx + ny*ny + nz*nz)
         if length == 0: length = 1
         
-        stl_content.append(f"  facet normal {nx/length:.4f} {ny/length:.4f} {nz/length:.4f}")
-        stl_content.append("    outer loop")
+        lines.append(f"  facet normal {nx/length:.4f} {ny/length:.4f} {nz/length:.4f}")
+        lines.append("    outer loop")
         for v in [v1, v2, v3]:
-            stl_content.append(f"      vertex {v[0]:.4f} {v[1]:.4f} {v[2]:.4f}")
-        stl_content.append("    endloop")
-        stl_content.append("  endfacet")
+            lines.append(f"      vertex {v[0]:.4f} {v[1]:.4f} {v[2]:.4f}")
+        lines.append("    endloop")
+        lines.append("  endfacet")
 
+    # Tetrahedron faces
     add_facet(t, f_pt, l)
     add_facet(t, l, r)
     add_facet(t, r, f_pt)
     add_facet(l, f_pt, r)
 
-    stl_content.append("endsolid")
-    return "\n".join(stl_content)
+    lines.append("endsolid")
+    return "\n".join(lines)
 
-def update_readme(new_stl):
-    with open(README_FILE, "r") as f:
-        content = f.read()
+def write_readme(stl_content):
+    # We use tildes (~~~) here to avoid breaking the python string formatting.
+    # GitHub renders ~~~stl just like ```stl, so this works perfectly.
+    
+    readme_text = f"""# 🗿 Collaborative Sculpture
 
-    pattern = r"()(.*?)()"
-    
-    # FIX: We explicitly add the ```stl and ``` fences here
-    # This ensures the output is always a valid code block
-    replacement = f"\\1\n```stl\n{new_stl}\n```\n\\3"
-    
-    new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
+The community is building this shape together. Every update completely rewrites this file!
+
+## Current Shape
+Below is the live STL data. GitHub renders this automatically.
+
+~~~stl
+{stl_content}
+~~~
+
+## How to Contribute
+1. Click the button below.
+2. Choose a point and move it!
+
+[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
+
+---
+*Last updated by the ShapeBot*
+"""
     
     with open(README_FILE, "w") as f:
-        f.write(new_content)
+        f.write(readme_text)
 
 if __name__ == "__main__":
     state = load_state()
@@ -100,5 +111,5 @@ if __name__ == "__main__":
             with open(STATE_FILE, "w") as f:
                 json.dump(state, f, indent=2)
 
-    stl_data = generate_stl_string(state)
-    update_readme(stl_data)
+    stl_string = generate_stl_content(state)
+    write_readme(stl_string)

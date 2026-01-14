@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   update:
-    if: ${{ startsWith(github.event.issue.title, 'Sculpt') || startsWith(github.event.issue.title, 'Update Crystal') }}
+    if: ${{startsWith(github.event.issue.title, 'Sculpt:') || startsWith(github.event.issue.title, 'Sculpt:')}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,22 +19,21 @@ jobs:
         with:
           python-version: '3.x'
 
-      # THIS IS THE STEP WE MISSED BEFORE
-      - name: Run Script to Modify README
+      - name: Generate Binary STL
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
         run: python modify.py
 
-      - name: Commit and Push
+      - name: Commit Changes
         run: |
           git config --global user.name 'ShapeBot'
           git config --global user.email 'bot@noreply.github.com'
-          # We explicitly only add the README and the state file
-          git add README.md state.json
-          git commit -m "Update shape geometry based on issue #${{ github.event.issue.number }}"
+          # Force add the binary file
+          git add model.stl state.json
+          git commit -m "Update model based on issue #${{ github.event.issue.number }}"
           git push
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          comment: "✅ Success! I have updated the STL code block in the README."
+          comment: "✅ Success! The binary STL has been updated."
