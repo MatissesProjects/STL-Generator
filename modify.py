@@ -7,12 +7,14 @@ README_FILE = "README.md"
 
 def load_state():
     if not os.path.exists(STATE_FILE):
-        # Default starting shape (Tetrahedron)
+        # NEW SHAPE: Octahedron (6 vertices)
         return {
-            "top":   [0.0,   0.0,  10.0],
-            "front": [10.0, -6.0, -5.0],
-            "left":  [-8.0,  6.0, -5.0],
-            "right": [-8.0, -6.0, -5.0]
+            "top":    [0.0,   0.0,  12.0],
+            "bottom": [0.0,   0.0, -12.0],
+            "front":  [10.0,  0.0,  0.0],
+            "back":   [-10.0, 0.0,  0.0],
+            "left":   [0.0,   10.0, 0.0],
+            "right":  [0.0,  -10.0, 0.0]
         }
     with open(STATE_FILE, "r") as f:
         return json.load(f)
@@ -39,12 +41,15 @@ def parse_issue_body():
     return vertex_name, axis_name, amount
 
 def generate_stl_content(state):
+    # Unpack 6 vertices
     t = state["top"]
+    b = state["bottom"]
     f_pt = state["front"]
+    bk = state["back"]
     l = state["left"]
     r = state["right"]
 
-    lines = ["solid generated_shape"]
+    lines = ["solid collaborative_crystal"]
 
     def add_facet(v1, v2, v3):
         ux, uy, uz = v2[0]-v1[0], v2[1]-v1[1], v2[2]-v1[2]
@@ -60,19 +65,24 @@ def generate_stl_content(state):
         lines.append("    endloop")
         lines.append("  endfacet")
 
-    # Tetrahedron faces
-    add_facet(t, f_pt, l)
-    add_facet(t, l, r)
-    add_facet(t, r, f_pt)
-    add_facet(l, f_pt, r)
+    # -- TOP PYRAMID (4 Faces) --
+    # Connect Top to the 4 waist points
+    add_facet(t, f_pt, r)
+    add_facet(t, r, bk)
+    add_facet(t, bk, l)
+    add_facet(t, l, f_pt)
+
+    # -- BOTTOM PYRAMID (4 Faces) --
+    # Connect Bottom to the 4 waist points (Reverse winding for outward normals)
+    add_facet(b, r, f_pt)
+    add_facet(b, bk, r)
+    add_facet(b, l, bk)
+    add_facet(b, f_pt, l)
 
     lines.append("endsolid")
     return "\n".join(lines)
 
 def write_readme(stl_content):
-    # We use tildes (~~~) here to avoid breaking the python string formatting.
-    # GitHub renders ~~~stl just like ```stl, so this works perfectly.
-    
     readme_text = f"""# 🗿 Collaborative Sculpture
 
 The community is building this shape together. Every update completely rewrites this file!
@@ -88,7 +98,7 @@ Below is the live STL data. GitHub renders this automatically.
 1. Click the button below.
 2. Choose a point and move it!
 
-[ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
+[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
 
 ---
 *Last updated by the ShapeBot*

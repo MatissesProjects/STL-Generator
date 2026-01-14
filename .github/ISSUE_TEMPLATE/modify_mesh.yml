@@ -14,7 +14,9 @@ body:
       label: Which point do you want to move?
       options:
         - "top"
+        - "bottom"
         - "front"
+        - "back"
         - "left"
         - "right"
     validations:
