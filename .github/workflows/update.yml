@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   update:
-    if: contains(github.event.issue.labels.*.name, 'automated-update')
+    if: ${{ contains(github.event.issue.labels.*.name, 'Sculpt') || contains(github.event.issue.labels.*.name, 'Update Crystal') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
