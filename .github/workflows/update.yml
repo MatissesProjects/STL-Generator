@@ -28,12 +28,11 @@ jobs:
         run: |
           git config --global user.name 'ShapeBot'
           git config --global user.email 'bot@noreply.github.com'
-          # Force add the binary file
-          git add model.stl state.json
-          git commit -m "Update model based on issue #${{ github.event.issue.number }}"
+          git add README.md state.json
+          git commit -m "Rewrite README with new shape coordinates"
           git push
 
       - name: Close Issue
         uses: peter-evans/close-issue@v2
         with:
-          comment: "✅ Success! The binary STL has been updated."
+          comment: "✅ Success! The README has been updated with the new STL!"
