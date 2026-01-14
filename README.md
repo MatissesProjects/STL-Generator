@@ -1,4 +1,11 @@
+# 🗿 Collaborative Sculpture
 
+Here is the current shape configuration. Create a PR or Issue to change it!
+
+[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
+
+### Current STL Data
+```stl
 solid simple_tetrahedron
   facet normal 0.5543 0.8315 0.0370
     outer loop
@@ -28425,3 +28432,4 @@ solid simple_tetrahedron
     endloop
   endfacet
 endsolid
+```
