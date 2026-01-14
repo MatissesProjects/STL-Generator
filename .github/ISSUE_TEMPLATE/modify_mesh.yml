@@ -14,11 +14,9 @@ body:
       label: Which point do you want to move?
       options:
         - "top"
-        - "bottom"
-        - "waist_1"
-        - "waist_2"
-        - "waist_3"
-        - "waist_4"
+        - "front"
+        - "left"
+        - "right"
     validations:
       required: true
 
@@ -37,7 +35,7 @@ body:
     id: amount
     attributes:
       label: Amount to move (Positive or Negative)
-      description: "Example: 5.0 or -3.5"
-      placeholder: "5.0"
+      description: "Try values like 2.0 or -1.5"
+      placeholder: "2.0"
     validations:
       required: true
