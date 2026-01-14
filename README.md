@@ -8,4 +8,4 @@ The community is building this shape together.
 1. Click the button below.
 2. Choose a point and move it!
 
-[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
+[ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
