@@ -7,23 +7,23 @@ Below is the live STL data. GitHub renders this automatically.
 
 ~~~stl
 solid generated_shape
-  facet normal 0.1714 0.9570 0.2342
+  facet normal 0.1469 0.9796 0.1368
     outer loop
-      vertex 5.0000 0.0000 10.0000
+      vertex 5.0000 0.0000 24.0000
       vertex 10.0000 4.0000 -10.0000
       vertex -8.0000 6.0000 -5.0000
     endloop
   endfacet
-  facet normal -0.5087 0.5511 0.6614
+  facet normal -0.8173 0.3689 0.4427
     outer loop
-      vertex 5.0000 0.0000 10.0000
+      vertex 5.0000 0.0000 24.0000
       vertex -8.0000 6.0000 -5.0000
       vertex -8.0000 -6.0000 5.0000
     endloop
   endfacet
-  facet normal 0.4398 -0.8954 -0.0691
+  facet normal 0.4620 -0.8861 -0.0363
     outer loop
-      vertex 5.0000 0.0000 10.0000
+      vertex 5.0000 0.0000 24.0000
       vertex -8.0000 -6.0000 5.0000
       vertex 10.0000 4.0000 -10.0000
     endloop
