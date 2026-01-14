@@ -1,0 +1,38 @@
+name: Process Shape Update
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  update:
+    if: contains(github.event.issue.labels.*.name, 'automated-update')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Script
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: python modify.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name 'ShapeBot'
+          git config --global user.email 'bot@noreply.github.com'
+          git add state.json model.obj model.mtl
+          git commit -m "Update Crystal based on #${{ github.event.issue.number }}"
+          git push
+
+      - name: Close Issue
+        uses: peter-evans/close-issue@v2
+        with:
+          comment: "✅ Success! I have updated the model. You can view the changes in the README."
