@@ -5,7 +5,7 @@ You can move any of the 6 corners of this shape.
 3. Choose a direction (X, Y, or Z).
 4. Enter how much to move it.
 
-[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
+[ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
 
 # 🗿 Collaborative Sculpture
 
