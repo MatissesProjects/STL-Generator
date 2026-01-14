@@ -14,25 +14,25 @@ solid generated_shape
       vertex -8.0000 6.0000 -5.0000
     endloop
   endfacet
-  facet normal -0.6638 0.2877 0.6904
+  facet normal -0.5087 0.5511 0.6614
     outer loop
       vertex 5.0000 0.0000 10.0000
       vertex -8.0000 6.0000 -5.0000
-      vertex -8.0000 -6.0000 0.0000
+      vertex -8.0000 -6.0000 5.0000
     endloop
   endfacet
-  facet normal 0.1798 -0.9289 0.3236
+  facet normal 0.2832 -0.8968 0.3398
     outer loop
       vertex 5.0000 0.0000 10.0000
-      vertex -8.0000 -6.0000 0.0000
+      vertex -8.0000 -6.0000 5.0000
       vertex 10.0000 -6.0000 -10.0000
     endloop
   endfacet
-  facet normal -0.4563 -0.3422 -0.8214
+  facet normal -0.5392 -0.5392 -0.6470
     outer loop
       vertex -8.0000 6.0000 -5.0000
       vertex 10.0000 -6.0000 -10.0000
-      vertex -8.0000 -6.0000 0.0000
+      vertex -8.0000 -6.0000 5.0000
     endloop
   endfacet
 endsolid
