@@ -7,30 +7,30 @@ Below is the live STL data. GitHub renders this automatically.
 
 ~~~stl
 solid collaborative_crystal
-  facet normal -0.6783 0.6783 -0.2826
+  facet normal -0.5298 0.5298 0.6623
     outer loop
-      vertex 5.0000 0.0000 12.0000
+      vertex 25.0000 0.0000 12.0000
       vertex 10.0000 0.0000 0.0000
       vertex 0.0000 -10.0000 0.0000
     endloop
   endfacet
-  facet normal 0.5298 0.5298 -0.6623
+  facet normal 0.3085 0.3085 -0.8998
     outer loop
-      vertex 5.0000 0.0000 12.0000
+      vertex 25.0000 0.0000 12.0000
       vertex 0.0000 -10.0000 0.0000
       vertex -10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal 0.5298 -0.5298 -0.6623
+  facet normal 0.3085 -0.3085 -0.8998
     outer loop
-      vertex 5.0000 0.0000 12.0000
+      vertex 25.0000 0.0000 12.0000
       vertex -10.0000 0.0000 0.0000
       vertex 0.0000 10.0000 0.0000
     endloop
   endfacet
-  facet normal -0.6783 -0.6783 -0.2826
+  facet normal -0.5298 -0.5298 0.6623
     outer loop
-      vertex 5.0000 0.0000 12.0000
+      vertex 25.0000 0.0000 12.0000
       vertex 0.0000 10.0000 0.0000
       vertex 10.0000 0.0000 0.0000
     endloop
@@ -70,7 +70,7 @@ endsolid
 1. Click the button below.
 2. Choose a point and move it!
 
-[ 🛠️ Modify the Mesh ](https://github.com/YOUR_USER/YOUR_REPO/issues/new?template=modify_mesh.yml)
+[ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
 
 ---
 *Last updated by the ShapeBot*
