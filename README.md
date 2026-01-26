@@ -7,30 +7,30 @@ Below is the live STL data. GitHub renders this automatically.
 
 ~~~stl
 solid collaborative_crystal
-  facet normal -0.2043 0.9450 0.2554
+  facet normal -0.0891 0.9507 0.2971
     outer loop
-      vertex 25.0000 0.0000 12.0000
+      vertex 50.0000 0.0000 12.0000
       vertex 10.0000 0.0000 0.0000
       vertex 0.0000 -10.0000 29.0000
     endloop
   endfacet
-  facet normal 0.1239 -0.9241 -0.3614
+  facet normal 0.0693 -0.9355 -0.3465
     outer loop
-      vertex 25.0000 0.0000 12.0000
+      vertex 50.0000 0.0000 12.0000
       vertex 0.0000 -10.0000 29.0000
       vertex -10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal 0.2188 0.7383 -0.6380
+  facet normal 0.1210 0.7868 -0.6052
     outer loop
-      vertex 25.0000 0.0000 12.0000
+      vertex 50.0000 0.0000 12.0000
       vertex -10.0000 0.0000 0.0000
       vertex 0.0000 10.0000 15.0000
     endloop
   endfacet
-  facet normal -0.3039 -0.8737 0.3799
+  facet normal -0.1442 -0.8650 0.4806
     outer loop
-      vertex 25.0000 0.0000 12.0000
+      vertex 50.0000 0.0000 12.0000
       vertex 0.0000 10.0000 15.0000
       vertex 10.0000 0.0000 0.0000
     endloop
