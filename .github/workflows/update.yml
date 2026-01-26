@@ -11,7 +11,7 @@ jobs:
 
   update:
 
-    if: ${{startsWith(github.event.issue.title, 'Sculpt:') || startsWith(github.event.issue.title, 'Reset:')}}
+    if: ${{startsWith(github.event.issue.title, 'Sculpt:') || startsWith(github.event.issue.title, 'Reset:') || startsWith(github.event.issue.title, 'Reset Mesh')}}
 
     runs-on: ubuntu-latest
 

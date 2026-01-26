@@ -120,7 +120,7 @@ Below is the live STL data. GitHub renders this automatically.
 
 [ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
 
-[ 🔄 Reset to Default ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=reset_mesh.yml)
+[ 🔄 Reset to Default ](https://github.com/MatissesProjects/STL-Generator/issues/new?title=Reset%20Mesh&body=Dont%20change%20anything%20just%20commit)
 
 ---
 *Last updated by the ShapeBot*
@@ -134,7 +134,7 @@ if __name__ == "__main__":
     issue_title = os.environ.get("ISSUE_TITLE", "")
     
     # Check if we are running in an action that requires modification
-    is_reset = issue_title.startswith("Reset:")
+    is_reset = issue_title.startswith("Reset:") or issue_title.startswith("Reset Mesh")
     is_sculpt = issue_title.startswith("Sculpt:") or "ISSUE_BODY" in os.environ
 
     if is_reset:

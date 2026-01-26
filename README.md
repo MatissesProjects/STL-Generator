@@ -74,7 +74,7 @@ endsolid
 
 [ 🛠️ Modify the Mesh ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=modify_mesh.yml)
 
-[ 🔄 Reset to Default ](https://github.com/MatissesProjects/STL-Generator/issues/new?template=reset_mesh.yml)
+[ 🔄 Reset to Default ](https://github.com/MatissesProjects/STL-Generator/issues/new?title=Reset%20Mesh&body=Dont%20change%20anything%20just%20commit)
 
 ---
 *Last updated by the ShapeBot*
