@@ -1,56 +1,56 @@
 solid collaborative_crystal
-  facet normal -0.6506 -0.7435 -0.1549
+  facet normal -0.6092 0.6092 -0.5077
     outer loop
-      vertex 5.0000 0.0000 21.0000
+      vertex 0.0000 0.0000 12.0000
       vertex 10.0000 0.0000 0.0000
-      vertex 0.0000 -10.0000 90.0000
+      vertex 0.0000 -10.0000 0.0000
     endloop
   endfacet
-  facet normal 0.0467 -0.9891 -0.1400
+  facet normal 0.6092 0.6092 -0.5077
     outer loop
-      vertex 5.0000 0.0000 21.0000
-      vertex 0.0000 -10.0000 90.0000
-      vertex -10.0000 0.0000 16.0000
+      vertex 0.0000 0.0000 12.0000
+      vertex 0.0000 -10.0000 0.0000
+      vertex -10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal 0.1514 -0.8780 -0.4541
+  facet normal 0.6092 -0.6092 -0.5077
     outer loop
-      vertex 5.0000 0.0000 21.0000
-      vertex -10.0000 0.0000 16.0000
+      vertex 0.0000 0.0000 12.0000
+      vertex -10.0000 0.0000 0.0000
       vertex 0.0000 10.0000 0.0000
     endloop
   endfacet
-  facet normal -0.6973 -0.6973 -0.1660
+  facet normal -0.6092 -0.6092 -0.5077
     outer loop
-      vertex 5.0000 0.0000 21.0000
+      vertex 0.0000 0.0000 12.0000
       vertex 0.0000 10.0000 0.0000
       vertex 10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal -0.0503 0.9932 0.1048
+  facet normal -0.6092 0.6092 0.5077
     outer loop
-      vertex -15.0000 0.0000 -12.0000
-      vertex 0.0000 -10.0000 90.0000
+      vertex 0.0000 0.0000 -12.0000
+      vertex 0.0000 -10.0000 0.0000
       vertex 10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal 0.9386 -0.3017 -0.1676
+  facet normal 0.6092 0.6092 0.5077
     outer loop
-      vertex -15.0000 0.0000 -12.0000
-      vertex -10.0000 0.0000 16.0000
-      vertex 0.0000 -10.0000 90.0000
+      vertex 0.0000 0.0000 -12.0000
+      vertex -10.0000 0.0000 0.0000
+      vertex 0.0000 -10.0000 0.0000
     endloop
   endfacet
-  facet normal 0.6103 -0.7847 -0.1090
+  facet normal 0.6092 -0.6092 0.5077
     outer loop
-      vertex -15.0000 0.0000 -12.0000
+      vertex 0.0000 0.0000 -12.0000
       vertex 0.0000 10.0000 0.0000
-      vertex -10.0000 0.0000 16.0000
+      vertex -10.0000 0.0000 0.0000
     endloop
   endfacet
-  facet normal -0.3971 -0.3971 0.8274
+  facet normal -0.6092 -0.6092 0.5077
     outer loop
-      vertex -15.0000 0.0000 -12.0000
+      vertex 0.0000 0.0000 -12.0000
       vertex 10.0000 0.0000 0.0000
       vertex 0.0000 10.0000 0.0000
     endloop
